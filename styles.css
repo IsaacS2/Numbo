@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Roboto+Serif:wght@100&family=Shizuru&display=swap');
+
+body{
+    background-color: rgb(darkblue);
+    background-image: radial-gradient(darkblue, black);
+    background-size: 100%;
+    margin-bottom: 40%;
+    color: darkgreen;
+
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1{
+    margin-left: 36%;
+}
+
+h3{
+    margin-left: 30%;
+}
+
+.inputText{
+    margin-left: 40%;
+}
+
+a{
+    margin-right: 5%;
+    color: whitesmoke;
+    /* border: 5%;
+    border-style: solid;
+    border-color: rgb(5, 5, 24); */
+}

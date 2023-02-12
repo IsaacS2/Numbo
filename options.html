@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options</title>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="./apps.js"></script>
+    <script src="./functions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body class = "backgroundColor" >
+    
+    <h1 id = "testelm">LET'S PLAY WITH STATISTICS!</h1>
+    <h3> Enter 2-digit state FIPS codes here, then press enter: <input type = "text" id = "text"> </h3>
+    <h2 id = "number">
+        <a class = "pop" id = "pop" onclick = "setNum('0');"> [Total in Poverty]</a>
+        <a class = "rate" id = "rate" onclick = "setNum('1');"> [Poverty Rate]</a> 
+        <a class = "insured" id = "insured" onclick = "setNum('2');"> [Total with Health Insurance]</a> 
+    </h2>
+</body>
+</html>
+
+<script>
+    sessionStorage.setItem("setNumberItem", "0");
+    input = document.getElementById("text");
+    //input2 = document.getElementById("text2");
+    
+    window.addEventListener("keypress", (event)=> {
+        if (event.keyCode === 13) {
+            //console.log("OK");
+            event.preventDefault();
+            value = document.getElementById("text").value;
+            //value2 = document.getElementById("text2").value;
+            
+        if (parseInt(value) <= 56 && parseInt(value) >= 1 && parseInt(value) != 3 &&
+         parseInt(value) != 7 && parseInt(value) != 11 && parseInt(value) != 14 &&
+         parseInt(value) != 43 && parseInt(value) != 52) {
+            //sessionStorage.setItem("yearChosen", value);
+            sessionStorage.setItem("stateChosen", value);
+            window.location.href = "povertyDisplay.html";
+        } else {
+            document.getElementById("testelm").innerHTML = "Sorry, incorrect input";
+        }
+    }
+    });
+
+</script>
+
+<style>
+    h1{
+        margin-left: 32%;
+    }
+    h3{
+        margin-left: 23%;
+    }
+    h2 {
+        margin-left: 15%;
+    }
+</style>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poverty Statistics</title>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="./apps.js"></script>
+    <script src="./functions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body class = "backgroundColor">
+    <h1 id = "testelm">NUMBERS, PLEASE!</h1>
+    <h3 class = "inputText" id = "startTimeline" onclick = "timer();">[Start Timeline]</h3>
+    <h2 id = "StateVal"> State chosen:  </h2>
+    <h2 id = "timerVal"> Current year: 1995 </h2>
+    <h4 id = "secretMessage"> </h4>
+    
+</body>
+</html>
+<script>
+    console.log(window);
+    console.log(sessionStorage.getItem("stateChosen"));
+    if (sessionStorage.getItem("setNumberItem") == 2 || sessionStorage.getItem("setNumberItem") == "2") {
+        sessionStorage.setItem("currYear", "2005");
+    } else {
+        sessionStorage.setItem("currYear", "1994");
+    }
+    numState = sessionStorage.getItem('stateChosen');
+    if (sessionStorage.getItem("setNumberItem") == 2 || sessionStorage.getItem("setNumberItem") == "2") {
+        document.getElementById("timerVal").innerHTML = "Current year: 2006";
+    }
+    getState(numState);
+    document.getElementById("StateVal").innerHTML = "State chosen: " + sessionStorage.getItem("stateName");
+    
+    
+</script>
+
+<style>
+    body{
+        margin-bottom: 37%;
+    }
+</style>
